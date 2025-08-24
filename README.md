@@ -23,14 +23,8 @@ This repository contains my solutions to ```Python``` exercises from ```Python f
 ### Clone the repository:
 
 bash``
-git clone https://github.com/your-username/Ejercicios_Python_OrlandoYer.git
+git clone https://github.com/Y0i77/py-practice-lab.git
 ``
-### Navigate to the project directory:
-
-bash``
-cd Ejercicios_Python_OrlandoYer
-``
-
 ## Install required dependencies:
 
 bash``
