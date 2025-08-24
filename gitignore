@@ -1,0 +1,35 @@
+﻿# .gitignore (crea sólo si no existe)
+if (!(Test-Path ".gitignore")) {
+@"
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual envs
+.venv/
+venv/
+ENV/
+env/
+
+# Editor / OS
+.vscode/
+.ipynb_checkpoints
+.DS_Store
+Thumbs.db
+
+# Packaging
+*.egg-info/
+dist/
+build/
+"@ | Out-File -Encoding UTF8 .gitignore
+}
+
+# README.md (crea sólo si no existe)
+if (!(Test-Path "README.md")) {
+@"
+# py-practice-lab
+
+Hands-on Python exercises and solutions by Yoi — practice problems, katas, and mini-projects.
+"@ | Out-File -Encoding UTF8 README.md
+}
