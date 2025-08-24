@@ -22,15 +22,16 @@ This repository contains my solutions to ```Python``` exercises from ```Python f
 ## Installation ⚙️
 ### Clone the repository:
 
-bash``
+```bash
 git clone https://github.com/Y0i77/py-practice-lab.git
-``
+```
+
 ## Install required dependencies:
 
-bash``
+```bash
 pip install rich
 pip install pyinputplus
-``
+```
 ---
 
 ## Features ✨
@@ -51,7 +52,7 @@ pip install pyinputplus
 
 - Rich - For beautiful console formatting
 
-
+---
 _This repository is part of my journey learning Python through practical exercises! 🌟_
 
 Happy Coding! 😊🚀
