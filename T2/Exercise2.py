@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 
 """
 Configuración del Perceptrón
-Aquí vamos a definir algunas constantes para que nuestra función tome forma
+Aquí vamos a definir algunas constantes para que nuestra función tome forma.
 """
 THRESHOLD = 0.5
 FIRST_ENTRY_WEIGHT = 0.7
