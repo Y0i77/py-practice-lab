@@ -7,16 +7,18 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# ==========================
-# Configuración del Perceptrón
-# ==========================
+"""
+Configuración del Perceptrón
+Aquí vamos a definir algunas constantes para que nuestra función tome forma
+"""
 THRESHOLD = 0.5
 FIRST_ENTRY_WEIGHT = 0.7
 SECOND_ENTRY_WEIGHT = 0.7
 
-# ==========================
-# Datos de la compuerta OR
-# ==========================
+"""
+Datos de la compuerta OR
+Aquí vamos a guardar en otra constante de tipo Array los puntos requeridos
+"""
 LOCATION_POINTS = np.array([
     [0, 0],
     [0, 1],
@@ -26,35 +28,43 @@ LOCATION_POINTS = np.array([
 LABELS = ['0', '1', '1', '1']
 SELECTED_COLORS = ['blue' if label == '0' else 'green' for label in LABELS]
 
+"""
+Funciones auxiliares
+Definimos unas funciones de tal manera que desacoplemos todo el trabajo y el código
+se vea más limpio, en estas utilizamos los terminos x, w1, w2,etc... Para brindar un
+enfoque más ligado a la formula que se nos ha dado en el libro.
+"""
 
-# ==========================
-# Funciones auxiliares
-# ==========================
+
 def decision_boundary(x_values, threshold, w1, w2):
-    """Calcula la frontera de decisión del perceptrón."""
+    """En esta parte vamos a calcular la frontera de decisión del perceptrón."""
     return (threshold - w1 * x_values) / w2
 
 
 def plot_decision_boundary(threshold, w1, w2, points, labels, colors):
-    """Genera el gráfico de la frontera de decisión con los puntos de verdad."""
-    # 1. Rango de valores para la recta
+    """Esta función genera el gráfico de la frontera de decisión con los puntos de verdad."""
+    # 1. Definimos el rango de valores para la recta
     x_range = np.linspace(-0.5, 1.5, 100)
     y_range = decision_boundary(x_range, threshold, w1, w2)
 
-    # 2. Crear gráfico
+    # 2. Empezamos a crear gráfico
     plt.figure(figsize=(8, 6))
     plt.plot(
         x_range, y_range, 'r-',
         label=f'{w1}x₁ + {w2}x₂ = {threshold}'
     )
 
-    # 3. Graficar puntos
+    # 3. Luego vamos a graficar puntos con el loop "for"
     for point, label, color in zip(points, labels, colors):
         plt.scatter(*point, color=color, s=100, zorder=3)
         plt.text(point[0] + 0.02, point[1] + 0.02,
                  f'({point[0]},{point[1]})', fontsize=12)
 
-    # 4. Personalización
+    """
+    Área de Personalización
+    Aquí trabajare toda la estructura personalizable de mi frontend
+    colores, tamaños, lineas, textos, etc...
+    """
     plt.xlim(-0.5, 1.5)
     plt.ylim(-0.5, 1.5)
     plt.axhline(0, color='black', linewidth=0.5)
@@ -67,9 +77,11 @@ def plot_decision_boundary(threshold, w1, w2, points, labels, colors):
     plt.show()
 
 
-# ==========================
-# Ejecución principal
-# ==========================
+"""
+Función __main__ para ejecutar mi código
+Desacoplamos todo el código de tal manera que su arranque se vea más organizado y
+escalable.
+"""
 if __name__ == "__main__":
     plot_decision_boundary(
         THRESHOLD,
