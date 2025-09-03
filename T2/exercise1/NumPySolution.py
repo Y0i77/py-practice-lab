@@ -41,10 +41,10 @@ def input_matrix(rows, cols, name):
 
 
 def print_matrix(matrix, title, style="cyan"):
-    """Print a matrix with formatted title using Rich."""
+    """Usamos Rich para imprimir el formato de las matrices."""
     console.print(f"\n[bold {style}]{title}:[/bold {style}]")
 
-    # Handle both regular lists and numpy arrays
+    # Utilizamos las dos listas regulares para Numpy
     if isinstance(matrix, np.ndarray):
         console.print(matrix)
     else:
@@ -55,18 +55,18 @@ def print_matrix(matrix, title, style="cyan"):
 def main():
     """Función Main para ejecutar las demás funciones."""
     try:
-        # Input matrices with fixed dimensions
+        # Ejecutamos las matrices con las nuevas dimensiones
         matrix_a = input_matrix(ROWS_A, COLS_A, "A")
         matrix_b = input_matrix(ROWS_B, COLS_B, "B")
 
-        # Convert to NumPy arrays
+        # Convertimos a Numpy las listas
         np_matrix_a = np.array(matrix_a)
         np_matrix_b = np.array(matrix_b)
 
-        # Calculate result using NumPy's matrix multiplication
+        # calculamos el resultado de la multiplicación con Numpy
         result_matrix = np.matmul(np_matrix_a, np_matrix_b)
 
-        # Display results
+        # Mostramos el resultado de todo 
         print_matrix(np_matrix_a, f"Matrix A ({ROWS_A}x{COLS_A})")
         print_matrix(np_matrix_b, f"Matrix B ({ROWS_B}x{COLS_B})")
         print_matrix(result_matrix,
