@@ -25,7 +25,7 @@ INDEX_BASE_POSITION = 0
 
 
 def input_matrix(rows, cols, name):
-    """Prompt user to input matrix values with validation."""
+    """Prompt para indicar al usuario que debe sinsertar datos para la Matriz."""
     console.print(f"\n[yellow]Insert values for matrix {name} ({rows}x{cols}):[/yellow]")
     matrix = []
     for i in range(rows):
@@ -42,15 +42,15 @@ def input_matrix(rows, cols, name):
 
 
 def multiply_matrices(matrix_a, matrix_b):
-    """Multiply two matrices using list operations."""
-    # Validate compatibility
+    """Multiplica las dos matrices usando una función de Listas."""
+    # Validamos la compatibilidad primero
     if len(matrix_a[INDEX_BASE_POSITION]) != len(matrix_b):
         raise ValueError("Cannot multiply matrices: incompatible dimensions")
 
-    # Initialize result matrix with zeros
+    # Luego inicializamos los resultados 
     result = [[INDEX_BASE_POSITION for _ in range(len(matrix_b[INDEX_BASE_POSITION]))] for _ in range(len(matrix_a))]
 
-    # Perform multiplication
+    # Realizamos las respectivas multiplicaciones, usamos los vectores i,j,k
     for i in range(len(matrix_a)):
         for j in range(len(matrix_b[INDEX_BASE_POSITION])):
             for k in range(len(matrix_b)):
@@ -67,7 +67,7 @@ def print_matrix(matrix, title, style="cyan"):
 
 
 def main():
-    """Main workflow for matrix multiplication."""
+    """Función Main para desacoplar el funciónamiendto del codigo y controlar bloque de errores."""
     try:
         # Input matrices with fixed dimensions
         matrix_a = input_matrix(ROWS_A, COLS_A, "A")
