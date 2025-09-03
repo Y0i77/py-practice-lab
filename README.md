@@ -29,8 +29,7 @@ git clone https://github.com/Y0i77/py-practice-lab.git
 ## Install required dependencies:
 
 ```bash
-pip install rich
-pip install pyinputplus
+pip install rich pyinputplus numpy
 ```
 ---
 
