@@ -2,7 +2,6 @@
 import matplotlib.pyplot as plt
 from abc import ABC, abstractmethod
 
-
 class ActivationFunction(ABC):
     """Clase abstracta base para todas las funciones de activación"""
 
