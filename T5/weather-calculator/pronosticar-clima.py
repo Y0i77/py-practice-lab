@@ -9,7 +9,7 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import LSTM, Dropout, Dense
 import matplotlib.pyplot as plt
 import joblib
-
+#Hola Mundo
 # ——— Cargar el archivo Excel ———
 filename = "dataexport_20251005T141846.xlsx"
 possible_paths = [
